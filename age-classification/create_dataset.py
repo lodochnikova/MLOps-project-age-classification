@@ -2,7 +2,7 @@ import os
 import pandas as pd
 
 
-data = pd.read_csv('faces/train.csv')
+data = pd.read_csv('../faces/train.csv')
 class_names = ['YOUNG', 'MIDDLE', 'OLD']
 N = list(range(len(class_names)))
 normal_mapping = dict(zip(class_names, N))

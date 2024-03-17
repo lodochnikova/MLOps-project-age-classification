@@ -13,9 +13,9 @@ class_names = ['YOUNG', 'MIDDLE', 'OLD']
 
 def main():
     model = ConvolutionalNetwork()
-    model.load_state_dict(torch.load("model.pth"))
+    model.load_state_dict(torch.load("age-classification/model.pth"))
 
-    data = pd.read_csv('data.csv')
+    data = pd.read_csv('age-classification/data.csv')
     path_label = create_path_label_list(data)
     random.seed(42)
     path_label = random.sample(path_label, 1000)
