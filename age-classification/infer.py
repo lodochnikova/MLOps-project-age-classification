@@ -4,9 +4,9 @@ from pytorch_lightning import Trainer
 from sklearn.metrics import classification_report
 import pandas as pd
 
-from create_path_label_list import create_path_label_list
-from network import ConvolutionalNetwork
-from datasets import ImageDataset, DataModule
+from age-classification.create_path_label_list import create_path_label_list
+from age-classification.network import ConvolutionalNetwork
+from age-classification.datasets import ImageDataset, DataModule
 
 class_names = ['YOUNG', 'MIDDLE', 'OLD']
 
