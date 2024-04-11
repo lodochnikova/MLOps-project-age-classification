@@ -1,0 +1,25 @@
+data:
+    path_to_data: ../age_classification/data.csv
+    seed: 42
+    seed_data_module: 12345
+    num_samples: 1000
+    class_names: ["YOUNG", "MIDDLE", "OLD"]
+
+model:
+    path_to_model: ../age_classification/model.pth
+    lr: 0.001
+
+train:
+    max_epoch: 30
+    batch_size: 32
+    train_test_split: 0.8
+
+infer:
+    digits: 4
+    device: "cpu"
+
+transform:
+    resize: 224
+    center_crop: 224
+    normalize_mean: [0.485, 0.456, 0.406]
+    normalize_std: [0.229, 0.224, 0.225]

@@ -1,0 +1,6 @@
+/outputs
+/lightning_logs
+*.pth
+*.log
+*.csv
+*.jpg

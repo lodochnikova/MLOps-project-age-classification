@@ -1,0 +1,28 @@
+
+[tool.poetry]
+name = "MLOps-project-age-classification"
+version = "0.1.0"
+description = ""
+authors = ["lodochnikova <lodochnikova.ev@phystech.edu>"]
+readme = "README.md"
+package-mode=false
+
+
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pandas = "^2.2.2"
+torch = "^2.2.2"
+torchvision = "^0.17.2"
+scikit-learn = "^1.4.2"
+pillow = "^10.3.0"
+pytorch-lightning = "^2.2.1"
+omegaconf = "^2.3.0"
+prettier = "^0.0.7"
+black = "^24.3.0"
+isort = "^5.13.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

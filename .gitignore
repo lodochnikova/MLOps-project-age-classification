@@ -1,7 +1,12 @@
 __pycache__/
 /.venv
-/.lightning_logs
+/faces
+**/lightning_logs
+**/outputs
+/.idea
 *.pth
 *.log
 *.csv
 *.jpg
+**.lock
+**/node_modules
