@@ -1,0 +1,6 @@
+outs:
+- md5: 0ce528e6f1c121ed4907440f188885b0.dir
+  size: 50577544
+  nfiles: 19907
+  hash: md5
+  path: faces
