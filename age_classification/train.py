@@ -1,10 +1,12 @@
 import random
+import subprocess
 
 import hydra
 import pandas as pd
 import pytorch_lightning as pl
 import torch
 from omegaconf import DictConfig
+from pytorch_lightning.loggers import MLFlowLogger
 from torchvision import transforms
 
 from age_classification.create_path_label_list import create_path_label_list
@@ -47,7 +49,25 @@ def main(cfg: DictConfig):
     datamodule.setup()
 
     model = ConvolutionalNetwork(cfg)
-    trainer = pl.Trainer(max_epochs=cfg.train.max_epoch)
+
+    git_commit_id = (
+        subprocess.check_output(["git", "rev-parse", "--short", "HEAD"])
+        .strip()
+        .decode("utf-8")
+    )
+
+    logger = MLFlowLogger(
+        experiment_name=git_commit_id, tracking_uri=cfg.train.logging_url
+    )
+
+    logger.log_hyperparams(dict(model.hparams).update({"git_commit_id": git_commit_id}))
+
+    trainer = pl.Trainer(
+        max_epochs=cfg.train.max_epoch,
+        logger=logger,
+        enable_checkpointing=False,
+    )
+
     trainer.fit(model, datamodule)
 
     torch.save(model.state_dict(), cfg.model.path_to_model)

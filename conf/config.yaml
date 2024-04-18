@@ -13,6 +13,7 @@ train:
     max_epoch: 30
     batch_size: 32
     train_test_split: 0.8
+    logging_url: ../.logs/my-mlflow-logs
 
 infer:
     digits: 4

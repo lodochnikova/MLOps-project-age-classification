@@ -4,6 +4,7 @@ __pycache__/
 **/lightning_logs
 **/outputs
 /.idea
+/.logs
 *.pth
 *.log
 *.csv
